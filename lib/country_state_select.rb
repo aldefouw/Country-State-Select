@@ -31,6 +31,11 @@ module CountryStateSelect
     CS.states(country).collect { |p| [p[1],p[1]] }.compact
   end
 
+  #Return the cities of given state and country
+  def self.collect_cities(state_id = '', country_id = '')
+    CS.cities(state_id.to_sym, country_id.to_sym)
+  end
+
   # Return a hash for use in the simple_form
   def self.state_options(options)
     states = states_collection(options[:form], options[:field_names])
