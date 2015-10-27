@@ -5,18 +5,9 @@ rvm:
   - 2.0.0
   - 2.1.2
 
-before_script:
-  - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
-
-env:
-  global:
-    - secure: HYTDjxnuw4rkijKUZgMX6cr7dtxFCZF53n5DrZ8iWKzBaAToH9HEV46jwEkTWIQTrxEOVPR5O4s7HA1bAiFl5NcBofvG/ucpLMUltF/tMa+SvNOCdAEkbMchvKaOk+1G6m/5EBFJTPjcPoKxLZ8quLQLehO3KxYOfdPGAP2ylLt7oiocCoV+W2LDz7JhiVN7juCJG/UyhliRQaXp1bDDedGdMsilMdVziLx7ioCA69l6LUvBW9JyWm78eEfdiNcIjgDOR5fw0ru/sUxTBTVJXfFjKr5jkSbyG/4Y3v4nAlJHDJjce9PKl19aHrDLxCXqHenrzT646bs3wEOpMH0Mo0+20rHPWrx0BouwukHbSqCL6m3W6SAcfiaPVUCoJPl4NqF+Pu6ifmer1DZWPF+r+KvLlQY+AE3omvh0gqTzr2d/XPB2ggvaXRInB2H1XYa4r4SuZFyEwPWp5/T+FNWuGas0IptzXSIDf1Fx9lx94C8N+B0Lws/NeU9tQCDNU47hPvnERHdxmWyFf0i8TEBGCjYb/IVX5xyti//ad53avAEm1Ub80Wf2B+KM75z2rFQyxZ0rgtrDRDFzlAzsoyr0/vzYMhIj05HwOCXwpSzEbfI2bGkTvMBc6jKXNf04ayTCtsdeGOeO/8YxTNGLzASXJas/giFFo1p7MJ7PjeU/I6E=
-    - secure: oDP33u4fSKz+8n2j0QwzUDWbGSMFk/65q0atkFV841t81J67+gTj5Lemjb6c/4DFvtJkubXvH4MheDYD0XDPFMZCJrQvtJ5zbQoH9kc2kFwJZJH+ERPXM7nZsxA94zb0VsW7+HjBHMpjk53fI8UbuGz8ec8vyU0gomru7ldkKX6GsxtBDqaDp/BNIQVKgemQDIP0ik/wEiG+J4Zuag7YwaXMfywBttuWM6zgwKIVo1YrL9Ys2zqS5nBPCyH+npk2BtLNSuzz6Mz9d7tZGytTq8ne3AfWdb8+Bc97A3LQd6Io43b4RmhZj5MEoavb7WV//F7MdBfFYGWgcbv87q1dyxt1GICkDf+HjmwEZH4SxnRjN2xXrpCm1XdZnorWOwxDKsYR0p8gjkgLUCVbk28RsAl+cG6kdPCnhXW7F/ay3Yw7ehp9rUFbCQoQn9p43hXhwSliAFffWK4IkgzjUyjMe2MNkk0RZDw9YC/Ssh6xWMD9Kn/VEicC9hkGO6aagN+wUzoID/I20nCgl3YAmDO3mcJC2Kf65u0BV71a8eVuSHjNz86rHLnHgI9S1uaC9P/MEan0ZYrkD7xzJKuSbDcRNPE7vEH4xrkqym90iiG7M4rt3kLwplHoS9l/SUcWFB6bmbbMJF+DWAVQ6tGs6oezwV2BtkYZ1dTgm91tLglW28k=
-
-addons:
-  sauce_connect: true
-
 script:
   - rspec
   - cd test/dummy/
+  - bundle install
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec cucumber
