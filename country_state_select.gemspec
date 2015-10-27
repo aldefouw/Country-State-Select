@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'cucumber-rails'
+  spec.add_development_dependency 'database_cleaner'
   spec.add_development_dependency 'sqlite3'
 
   spec.add_runtime_dependency 'rails'
