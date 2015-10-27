@@ -53,10 +53,7 @@ ActionController::Base.allow_rescue = false
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
 begin
-
-  DatabaseCleaner.strategy = :transaction
   Cucumber::Rails::Database.javascript_strategy = :truncation
-
   Selenium::WebDriver.for :remote, :url => sauce_endpoint, :desired_capabilities => caps(name)
   Capybara.javascript_driver = :remote
 
