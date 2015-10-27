@@ -5,6 +5,28 @@
 # files.
 
 require 'cucumber/rails'
+require "selenium/webdriver"
+
+module SauceDriver
+  class << self
+    def sauce_endpoint
+      "http://#{ENV["SAUCE_USERNAME"]}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:80/wd/hub"
+    end
+
+    def caps(name)
+      caps = {
+          :platform => "Mac OS X 10.9",
+          :browserName => "Chrome",
+          :version => "31",
+          :name => name
+      }
+    end
+
+    def new_driver(name)
+      Selenium::WebDriver.for :remote, :url => sauce_endpoint, :desired_capabilities => caps(name)
+    end
+  end
+end
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -31,9 +53,13 @@ ActionController::Base.allow_rescue = false
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
 begin
+
   DatabaseCleaner.strategy = :transaction
   Cucumber::Rails::Database.javascript_strategy = :truncation
-  Capybara.javascript_driver = :webkit
+
+  Selenium::WebDriver.for :remote, :url => sauce_endpoint, :desired_capabilities => caps(name)
+  Capybara.javascript_driver = :remote
+
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
@@ -58,9 +84,12 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 
 Before('@selenium') do
-  Capybara.current_driver = :selenium
+  Capybara.current_driver = :remote
 end
 
 After('@selenium') do
   Capybara.use_default_driver
 end
+
+
+
