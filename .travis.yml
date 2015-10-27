@@ -19,4 +19,4 @@ addons:
 script:
   - rspec
   - cd test/dummy/
-  - cucumber
+  - bundle exec cucumber
