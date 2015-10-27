@@ -17,9 +17,11 @@ function CountryStateSelect(options) {
 
   function statesDropdown() {
 
-    addChosenToCountry();
-    addChosenToState();
-    addChosenToCity();
+    if(chosenIsRequired()) {
+      addChosenToCountry();
+      addChosenToState();
+      addChosenToCity();
+    }
 
     $("#" + country_id).change(function () {
       return findStates($(this).val());
@@ -34,14 +36,14 @@ function CountryStateSelect(options) {
   }
 
   function addChosenToState(){
-    if (chosenIsRequired && stateIsNotText()) {
+    if (stateIsNotText()) {
       $('#' + state_id).chosen();
     }
   }
 
   function addChosenToCity(){
 
-    if (chosenIsRequired && cityIsNotText()) {
+    if (cityIsNotText()) {
       $('#' + city_id).chosen();
     }
   }
