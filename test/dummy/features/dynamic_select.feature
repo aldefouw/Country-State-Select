@@ -1,13 +1,13 @@
 Feature: Dynamic Select
 
-  @javascript
+  @selenium
   Scenario: Provinces for United States are properly populated
     Given I am on the Add Location page
     And I see "" as my state
     When I select the "United States" as my country
     Then I see "AK" as my state
 
-  @javascript
+  @selenium
   Scenario: Provinces for Canada are properly populated
     Given I am on the Add Location page
     And I see "" as my state
