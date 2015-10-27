@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'cucumber-rails'
   spec.add_development_dependency 'database_cleaner'
   spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'capybara-webkit'
 
   spec.add_runtime_dependency 'rails'
   spec.add_runtime_dependency 'simple_form', "~> 3.2"
