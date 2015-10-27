@@ -5,6 +5,7 @@
 # files.
 
 require 'cucumber/rails'
+require 'sauce_driver'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -58,7 +59,7 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 
 Before('@selenium') do
-  Capybara.current_driver = :selenium
+  Capybara.current_driver = new_driver('remote_selenium')
 end
 
 After('@selenium') do
