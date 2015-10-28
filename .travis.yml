@@ -21,4 +21,4 @@ script:
   - cd test/dummy/
   - bundle install
   - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec cucumber
+  - bundle exec rake sauce:features
