@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
 
   spec.add_development_dependency 'cucumber-rails'
+  spec.add_development_dependency 'sauce-connect'
   spec.add_development_dependency 'sauce-cucumber'
   spec.add_development_dependency 'sauce'
   spec.add_development_dependency 'sqlite3'

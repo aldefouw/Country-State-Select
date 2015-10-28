@@ -23,6 +23,7 @@ end
 gem "capybara"
 gem "sauce-cucumber"
 gem "sauce"
+gem "sauce-connect"
 
 gem "rails", "~> 4.2"
 gem "sqlite3"
