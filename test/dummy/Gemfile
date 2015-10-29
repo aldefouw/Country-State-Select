@@ -7,6 +7,10 @@ group :development, :test do
   gem "web-console", "~> 2.2"
   gem "thin", "~> 1.6"
   gem "faker", "~> 1.5"
+  gem 'capybara'
+  gem 'sauce'
+  gem 'sauce-connect'
+  gem 'sauce-cucumber'
 end
 
 group :development do
@@ -15,17 +19,15 @@ group :development do
 end
 
 group :test do
-  gem "cucumber-rails", "~> 1.4", {:require=>false}
   gem "rspec-rails", "~> 3.3"
   gem "factory_girl_rails", "~> 4.5"
+
+  gem "cucumber-rails", "~> 1.4", {:require=>false}
 end
 
-gem "capybara"
-gem "sauce-cucumber"
-gem "sauce"
-gem "sauce-connect"
-
 gem "rails", "~> 4.2"
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem "sqlite3"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", "~> 2.7"
@@ -40,3 +42,4 @@ gem "simple_form", "~> 3.2"
 gem "reform", "~> 2.0"
 
 gem 'country_state_select', path: '../../'
+

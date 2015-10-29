@@ -6,6 +6,8 @@
 
 require 'capybara/cucumber'
 require 'sauce/cucumber'
+require 'dotenv'
+Dotenv.load
 
 # To run all tests with Sauce
 Capybara.default_driver = :sauce
