@@ -1,13 +1,13 @@
 <h1>Listing Locations</h1>
 
-<table>
+<table width="100%%">
   <thead>
     <tr>
       <th>Country</th>
       <td>&nbsp;</td>
       <th>State</th>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <th>City</th>
     </tr>
   </thead>
 
@@ -18,7 +18,11 @@
         <td>&nbsp;</td>
         <td><%= location.test_state %></td>
         <td>&nbsp;</td>
+        <td><%= location.test_city %></td>
+
+        <td><%= link_to "Edit", location_path(location.id), class: "btn btn-default" %></td>
         <td><%= link_to "X", location, :method => :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></td>
+
       </tr>
     <% end %>
   </tbody>
