@@ -10,4 +10,3 @@ script:
   - bundle install
   - rspec
   - cd test/dummy/
-  - cucumber
