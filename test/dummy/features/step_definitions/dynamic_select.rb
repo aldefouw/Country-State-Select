@@ -1,5 +1,5 @@
 Given(/^I am on the Add Location page$/) do
-  visit '/locations/new'
+  visit new_location_path
 end
 
 When(/^I select the "(.*?)" as my country$/) do |country|
