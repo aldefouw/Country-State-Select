@@ -7,6 +7,7 @@ group :development, :test do
   gem "web-console", "~> 2.2"
   gem "thin", "~> 1.6"
   gem "faker", "~> 1.5"
+  gem "jasmine-rails"
 end
 
 group :development do
