@@ -9,4 +9,4 @@ script:
 
   - bundle install
   - rspec
-  - cd test/dummy/; bundle install; bundle exec rake spec:javascript
+  - cd test/dummy/; bundle install; rake spec:javascript
