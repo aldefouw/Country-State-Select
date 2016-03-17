@@ -19,6 +19,7 @@
         <td><%= location.test_state %></td>
         <td>&nbsp;</td>
         <td><%= location.test_city %></td>
+        <td><%= link_to "Edit", edit_location_path(location.id), class: "btn btn-default" %></td>
         <td><%= link_to "X", location, :method => :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>

@@ -18,6 +18,10 @@ class LocationsController < ApplicationController
     load_location_form
   end
 
+  def edit
+    load_location_form
+  end
+
   def update
     load_location_form
     build_location_form
