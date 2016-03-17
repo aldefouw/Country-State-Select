@@ -7,11 +7,11 @@
     <%= f.select :test_state, CountryStateSelect.collect_states(f.object.test_country), selected: f.object.test_state %>
 
     <p>City</p>
-    <%= f.select :test_city, CountryStateSelect.collect_cities(f.object.test_state), selected: f.object.test_city %>
+    <%= f.select :test_city, CountryStateSelect.collect_cities(f.object.test_country, f.object.test_state), selected: f.object.test_city %>
 
     <br /><br />
 
-    <%= f.button :submit %>
+    <%= f.button "Submit", class: "btn btn-success" %>
 
     <%= link_to "Cancel", locations_path, class: "btn btn-danger" %>
 

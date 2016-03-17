@@ -34,6 +34,8 @@ module CountryStateSelect
 
   #Return the cities of given state and country
   def self.collect_cities(state_id = '', country_id = '')
+    country_id = countries_collection.first.second if country_id.nil?
+    state_id = CS.states(country_id).first.first if state_id.nil?
     CS.cities(state_id.to_sym, country_id.to_sym)
   end
 
