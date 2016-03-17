@@ -1,10 +1,15 @@
-<%= simple_form_for @location do |f| %>
+<%= form_for @location do |f| %>
 
-    <%= f.input :test_country, label: "Country", collection: CountryStateSelect.countries_collection %>
+    <p>Country</p>
+    <%= f.select :test_country, CountryStateSelect.countries_collection %>
 
-    <%= f.input :test_state, CountryStateSelect.state_options(label: "State / Province", form: f, field_names: { :country => :test_country, :state => :test_state } ) %>
+    <p>State / Province</p>
 
-    <%= f.input :test_city, label: "City" %>
+    <% states = CountryStateSelect.state_options(form: f, field_names: { :country => :test_country, :state => :test_state } ) %>
+    <%= f.select :test_state, states[:collection]%>
+
+    <p>City</p>
+    <%= f.select :test_city, label: "City" %>
 
     <br /><br />
 
