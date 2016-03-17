@@ -28,6 +28,7 @@ module CountryStateSelect
 
   # Return the collected States for a given Country
   def self.collect_states(country)
+    country = countries_collection.first.second if country.nil?
     CS.states(country).collect {|p| [ p[1], p[0] ] }.compact
   end
 
