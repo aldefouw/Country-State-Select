@@ -1,15 +1,13 @@
 <%= form_for @location do |f| %>
 
     <p>Country</p>
-    <%= f.select :test_country, CountryStateSelect.countries_collection %>
+    <%= f.select :test_country, CountryStateSelect.countries_collection, selected: f.object.test_country %>
 
     <p>State / Province</p>
-
-    <% states = CountryStateSelect.state_options(form: f, field_names: { :country => :test_country, :state => :test_state } ) %>
-    <%= f.select :test_state, states[:collection]%>
+    <%= f.select :test_state, CountryStateSelect.collect_states(f.object.test_country), selected: f.object.test_state %>
 
     <p>City</p>
-    <%= f.select :test_city, label: "City" %>
+    <%= f.select :test_city, CountryStateSelect.collect_cities(f.object.test_state), selected: f.object.test_city %>
 
     <br /><br />
 
