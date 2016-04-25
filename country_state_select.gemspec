@@ -22,11 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'jasmine-rails'
-
   spec.add_runtime_dependency 'rails'
-  spec.add_runtime_dependency 'simple_form', "~> 3.2"
-  spec.add_runtime_dependency 'chosen-rails', "~> 1.4"
-  spec.add_runtime_dependency 'compass-rails', '~> 2.0.4'
   spec.add_runtime_dependency 'city-state'
 end
