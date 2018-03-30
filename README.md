@@ -1,4 +1,4 @@
-##Country State Select [![Build Status](https://travis-ci.org/arvindvyas/Country-State-Select.svg?branch=master)](https://travis-ci.org/arvindvyas/Country-State-Select)  [![Code Climate](https://codeclimate.com/github/arvindvyas/Country-State-Select/badges/gpa.svg)](https://codeclimate.com/github/arvindvyas/Country-State-Select)
+# Country State Select [![Build Status](https://travis-ci.org/arvindvyas/Country-State-Select.svg?branch=master)](https://travis-ci.org/arvindvyas/Country-State-Select)  [![Code Climate](https://codeclimate.com/github/arvindvyas/Country-State-Select/badges/gpa.svg)](https://codeclimate.com/github/arvindvyas/Country-State-Select)
 
 Country State Select is a library that provides an easy API to generate Country , State / Province  and City dropdowns for use in forms.
 
@@ -8,10 +8,10 @@ For instance, if a user chooses "United States of America" for a Country dropdow
 
 The data for Countries and States is populated by the excellent [city-state](https://github.com/loureirorg/city-state) gem. 
 
-#Demo Of the Gem
+# Demo Of the Gem
   https://country-state-select.herokuapp.com
 
-#Getting Started
+# Getting Started
 
 Country State Select is released as a Ruby Gem and requires the Rails environment as well.
 
