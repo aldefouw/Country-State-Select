@@ -1,3 +1,3 @@
 module CountryStateSelect
-  VERSION = "4.0.0"
+  VERSION = "3.0.6"
 end
