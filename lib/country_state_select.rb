@@ -2,7 +2,6 @@ require 'country_state_select/version'
 require 'city-state'
 require 'rails'
 require 'sass-rails'
-require 'compass-rails'
 require 'chosen-rails'
 require 'simple_form'
 
@@ -57,5 +56,5 @@ when /^3\.[12]/
 when /^3\.[0]/
   require 'country_state_select/railtie'
 else
-  fail 'Unsupported rails version'
+  require 'country_state_select/engine'
 end
