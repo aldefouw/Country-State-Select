@@ -2,7 +2,6 @@ require "country_state_select/version"
 require "city-state"
 require "rails"
 require "sass-rails"
-require "compass-rails"
 require "chosen-rails"
 require "simple_form"
 

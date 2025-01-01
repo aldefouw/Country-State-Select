@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler', '~> 1.7'
+  spec.add_development_dependency 'bundler', '> 1.7'
   spec.add_development_dependency 'rake', '~> 12.3.3'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'pry'
@@ -26,6 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'rails'
   spec.add_runtime_dependency 'simple_form'
   spec.add_runtime_dependency 'chosen-rails'
-  spec.add_runtime_dependency 'compass-rails'
   spec.add_runtime_dependency 'city-state'
 end
